@@ -116,3 +116,31 @@ modelsummary::modelsummary(
   fmt = 4,
   output = "Output/final_regression_marital_output.md"
 )
+
+github_markdown <- function(path) {
+  
+  temporary_file <- tempfile(fileext = ".md")
+  
+  rmarkdown::pandoc_convert(
+    input = normalizePath(path),
+    from = "markdown",
+    to = "gfm",
+    output = temporary_file
+  )
+  
+  file.copy(
+    temporary_file,
+    path,
+    overwrite = TRUE
+  )
+  
+  unlink(temporary_file)
+}
+
+github_markdown(
+  "Output/final_regression_output.md"
+)
+
+github_markdown(
+  "Output/final_regression_marital_output.md"
+)
