@@ -47,7 +47,7 @@ Canada_data <- Canada_data  |>
       YRIMM >= 2006 & YRIMM <= 2010 ~ "6–10 years",
       YRIMM >= 1996 & YRIMM <= 2005 ~ "11–20 years",
       YRIMM %in% 1:8                ~ "21+ years",
-      YRIMM >= 1990 & YRIMM <= 1995 ~ "21+",
+      YRIMM >= 1990 & YRIMM <= 1995 ~ "21+ years",
       TRUE                          ~ NA_character_
     ),
     DURATION_LEVEL = factor(
