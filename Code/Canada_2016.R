@@ -43,10 +43,10 @@ Canada_data <- harmonized_education_Canada(Canada_data_filtered)
 Canada_data <- Canada_data  |>
   dplyr::mutate(
     DURATION_LEVEL = dplyr::case_when(
-      YRIMM >= 2011 & YRIMM <= 2015 ~ "0–5",
-      YRIMM >= 2006 & YRIMM <= 2010 ~ "6–10",
-      YRIMM >= 1996 & YRIMM <= 2005 ~ "11–20",
-      YRIMM %in% 1:8                ~ "21+",
+      YRIMM >= 2011 & YRIMM <= 2015 ~ "0–5 years",
+      YRIMM >= 2006 & YRIMM <= 2010 ~ "6–10 years",
+      YRIMM >= 1996 & YRIMM <= 2005 ~ "11–20 years",
+      YRIMM %in% 1:8                ~ "21+ years",
       YRIMM >= 1990 & YRIMM <= 1995 ~ "21+",
       TRUE                          ~ NA_character_
     ),
